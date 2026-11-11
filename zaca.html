@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zaca's GREGO - O mais brabo da cidade</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Montserrat (combina mais com lanchonetes) e Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:ital,wght@0,700;0,800;0,900;1,800&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Montserrat', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            red: '#dc2626', // bg-red-600
+                            orange: '#f97316', // bg-orange-500
+                            yellow: '#fbbf24', // bg-amber-400
+                            dark: '#09090b', // bg-zinc-950
+                            card: '#18181b', // bg-zinc-900
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-header {
+            background: rgba(9, 9, 11, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(220, 38, 38, 0.2);
+        }
+        .text-glow {
+            text-shadow: 0 0 20px rgba(249, 115, 22, 0.5);
+        }
+        .fire-bg {
+            background: radial-gradient(circle at top, rgba(220, 38, 38, 0.15) 0%, rgba(9, 9, 11, 1) 70%);
+        }
+        .item-dots {
+            flex-grow: 1;
+            border-bottom: 2px dotted #3f3f46;
+            margin: 0 10px;
+            position: relative;
+            top: -6px;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-200 antialiased bg-brand-dark selection:bg-brand-red selection:text-white">
+
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 transition-all duration-300 glass-header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo text -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer">
+                    <i class="ph-fill ph-fire text-3xl text-brand-orange"></i>
+                    <span class="font-display font-black text-2xl tracking-tighter text-white italic uppercase">
+                        Zaca's <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-red to-brand-orange">GREGO</span>
+                    </span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#cardapio" class="text-gray-300 hover:text-brand-orange font-medium transition-colors uppercase text-sm tracking-wider">Cardápio</a>
+                    <a href="#contato" class="text-gray-300 hover:text-brand-orange font-medium transition-colors uppercase text-sm tracking-wider">Contato</a>
+                </nav>
+
+                <!-- CTA Button -->
+                <div class="hidden md:flex items-center">
+                    <a href="https://wa.me/5511999999999" target="_blank" class="bg-gradient-to-r from-[#25D366] to-[#128C7E] hover:scale-105 text-white px-5 py-2.5 rounded-full font-bold transition-all shadow-[0_0_15px_rgba(37,211,102,0.3)] flex items-center gap-2">
+                        <i class="ph-fill ph-whatsapp text-xl"></i> Pedir Agora
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-16 lg:pt-48 lg:pb-24 overflow-hidden fire-bg min-h-[60vh] flex flex-col justify-center border-b border-zinc-800">
+        <div class="absolute inset-0 bg-[url('https://placehold.co/1920x1080/09090b/18181b?text=Fire+Texture')] opacity-10 bg-cover bg-center mix-blend-overlay"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="inline-block mb-6 animate-pulse">
+                <i class="ph-fill ph-fire text-6xl text-brand-orange drop-shadow-[0_0_20px_rgba(249,115,22,0.8)]"></i>
+            </div>
+            <h1 class="font-display font-black italic uppercase text-5xl md:text-7xl lg:text-8xl tracking-tighter text-white mb-2 transform -skew-x-6">
+                Zaca's <br class="md:hidden"/> <span class="text-transparent bg-clip-text bg-gradient-to-b from-brand-yellow via-brand-orange to-brand-red text-glow">GREGO</span>
+            </h1>
+            <p class="mt-4 font-display font-bold text-2xl md:text-3xl text-gray-300 max-w-2xl mx-auto mb-10 tracking-tight uppercase">
+                O mais <span class="text-brand-red">brabo</span> da cidade
+            </p>
+            
+            <a href="#cardapio" class="inline-flex items-center gap-2 bg-gradient-to-r from-brand-red to-brand-orange text-white px-8 py-4 rounded-full font-bold text-lg uppercase tracking-wide hover:scale-105 transition-transform shadow-[0_10px_30px_rgba(220,38,38,0.4)]">
+                Ver Cardápio <i class="ph-bold ph-caret-down"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="cardapio" class="py-20 relative bg-brand-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                
+                <!-- ESPETINHOS COLUMN -->
+                <div class="space-y-8">
+                    <!-- Title -->
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="h-1 flex-grow bg-gradient-to-r from-transparent to-brand-red"></div>
+                        <h2 class="font-display font-black text-3xl md:text-4xl text-white uppercase italic tracking-wider">Espetinhos</h2>
+                        <div class="h-1 flex-grow bg-gradient-to-l from-transparent to-brand-red"></div>
+                    </div>
+
+                    <!-- Items Container -->
+                    <div class="bg-brand-card rounded-2xl p-6 md:p-8 border border-zinc-800 shadow-2xl relative overflow-hidden">
+                        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-orange to-brand-red"></div>
+                        
+                        <div class="space-y-5">
+                            <!-- Item -->
+                            <div class="flex items-end justify-between group">
+                                <h3 class="text-lg md:text-xl font-bold text-gray-100 group-hover:text-brand-orange transition-colors">Kafta Recheada</h3>
+                                <div class="item-dots"></div>
+                                <span class="text-lg md:text-xl font-black text-brand-orange whitespace-nowrap">R$ 14,00</span>
+                            </div>
+                            <!-- Item -->
+                            <div class="flex items-end justify-between group">
+                                <h3 class="text-lg md:text-xl font-bold text-gray-100 group-hover:text-brand-orange transition-colors">Carne</h3>
+                                <div class="item-dots"></div>
+                                <span class="text-lg md:text-xl font-black text-brand-orange whitespace-nowrap">R$ 12,00</span>
+                            </div>
+                            <!-- Item -->
+                            <div class="flex items-end justify-between group">
+                                <h3 class="text-lg md:text-xl font-bold text-gray-100 group-hover:text-brand-orange transition-colors">Coração</h3>
+                                <div class="item-dots"></div>
+                                <span class="text-lg md:text-xl font-black text-brand-orange whitespace-nowrap">R$ 12,00</span>
+                            </div>
+                            <!-- Item -->
+                            <div class="flex items-end justify-between group">
+                                <h3 class="text-lg md:text-xl font-bold text-gray-100 group-hover:text-brand-orange transition-colors">Frango com Bacon</h3>
+                                <div class="item-dots"></div>
+                                <span class="text-lg md:text-xl font-black text-brand-orange whitespace-nowrap">R$ 12,00</span>
+                            </div>
+                            <!-- Item -->
+                            <div class="flex items-end justify-between group">
+                                <h3 class="text-lg md:text-xl font-bold text-gray-100 group-hover:text-brand-orange transition-colors">Linguiça</h3>
+                                <div class="item-dots"></div>
+                                <span class="text-lg md:text-xl font-black text-brand-orange whitespace-nowrap">R$ 10,00</span>
+                            </div>
+                            <!-- Item -->
+                            <div class="flex items-end justify-between group">
+                                <h3 class="text-lg md:text-xl font-bold text-gray-100 group-hover:text-brand-orange transition-colors">Frango</h3>
+                                <div class="item-dots"></div>
+                                <span class="text-lg md:text-xl font-black text-brand-orange whitespace-nowrap">R$ 10,00</span>
+                            </div>
+                            <!-- Item -->
+                            <div class="flex items-end justify-between group">
+                                <h3 class="text-lg md:text-xl font-bold text-gray-100 group-hover:text-brand-orange transition-colors">Panceta</h3>
+                                <div class="item-dots"></div>
+                                <span class="text-lg md:text-xl font-black text-brand-orange whitespace-nowrap">R$ 10,00</span>
+                            </div>
+                            <!-- Item -->
+                            <div class="flex items-end justify-between group">
+                                <h3 class="text-lg md:text-xl font-bold text-gray-100 group-hover:text-brand-orange transition-colors">Queijo</h3>
+                                <div class="item-dots"></div>
+                                <span class="text-lg md:text-xl font-black text-brand-orange whitespace-nowrap">R$ 8,00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LANCHES & BEBIDAS COLUMN -->
+                <div class="space-y-10">
+                    
+                    <!-- LANCHES -->
+                    <div>
+                        <!-- Title -->
+                        <div class="flex items-center gap-4 mb-8">
+                            <div class="h-1 flex-grow bg-gradient-to-r from-transparent to-brand-red"></div>
+                            <h2 class="font-display font-black text-3xl md:text-4xl text-white uppercase italic tracking-wider">Lanches</h2>
+                            <div class="h-1 flex-grow bg-gradient-to-l from-transparent to-brand-red"></div>
+                        </div>
+
+                        <!-- Items Container -->
+                        <div class="space-y-6">
+                            <!-- Lanche Card 1 -->
+                            <div class="bg-brand-card p-6 rounded-2xl border border-zinc-800 shadow-xl hover:border-brand-red/50 transition-colors">
+                                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-3 gap-2">
+                                    <h3 class="font-display font-black text-2xl text-white italic">Zaca's Brabo</h3>
+                                    <span class="text-2xl font-black text-brand-red">R$ 25,00</span>
+                                </div>
+                                <p class="text-gray-400 text-sm leading-relaxed font-medium">
+                                    Pão baguete, 1 espeto a escolha, molho verde, barbecue, vinagrete e queijo.
+                                </p>
+                            </div>
+
+                            <!-- Lanche Card 2 -->
+                            <div class="bg-gradient-to-br from-brand-card to-zinc-900 p-6 rounded-2xl border border-brand-red/30 shadow-[0_0_20px_rgba(220,38,38,0.1)] relative overflow-hidden">
+                                <div class="absolute -right-10 -top-10 text-brand-red/10">
+                                    <i class="ph-fill ph-fire text-9xl"></i>
+                                </div>
+                                <div class="relative z-10">
+                                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-3 gap-2">
+                                        <h3 class="font-display font-black text-2xl text-white italic flex items-center gap-2">
+                                            Zaca's Turbo 
+                                        </h3>
+                                        <span class="text-2xl font-black text-brand-red">R$ 35,00</span>
+                                    </div>
+                                    <p class="text-gray-300 text-sm leading-relaxed font-medium">
+                                        Pão baguete, 2 espetos a escolha, molho verde, barbecue, vinagrete e queijo 
+                                        <span class="text-brand-orange font-bold uppercase block mt-1">+ Bacon</span>
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <!-- Adicionais Alert -->
+                            <div class="bg-zinc-900/50 border border-brand-yellow/30 rounded-xl p-4 flex items-start gap-3">
+                                <i class="ph-fill ph-warning-circle text-brand-yellow text-xl mt-0.5"></i>
+                                <div>
+                                    <h4 class="text-brand-yellow font-bold uppercase text-sm mb-1">Adicionais, sem valor</h4>
+                                    <p class="text-gray-300 text-sm font-medium flex gap-3">
+                                        <span class="flex items-center gap-1"><i class="ph-bold ph-check text-brand-orange"></i> Cheddar</span>
+                                        <span class="flex items-center gap-1"><i class="ph-bold ph-check text-brand-orange"></i> Catupiry</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- BEBIDAS -->
+                    <div>
+                        <!-- Title -->
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="h-1 flex-grow bg-gradient-to-r from-transparent to-brand-red"></div>
+                            <h2 class="font-display font-black text-2xl md:text-3xl text-white uppercase italic tracking-wider">Bebidas</h2>
+                            <div class="h-1 flex-grow bg-gradient-to-l from-transparent to-brand-red"></div>
+                        </div>
+
+                        <!-- Items Container -->
+                        <div class="bg-brand-card rounded-2xl p-6 md:p-8 border border-zinc-800 shadow-xl">
+                            <div class="space-y-4">
+                                <!-- Item -->
+                                <div class="flex items-end justify-between group">
+                                    <h3 class="text-lg md:text-xl font-bold text-gray-100 group-hover:text-brand-orange transition-colors">Refrigerante 200ml</h3>
+                                    <div class="item-dots"></div>
+                                    <span class="text-lg md:text-xl font-black text-brand-orange whitespace-nowrap">R$ 3,50</span>
+                                </div>
+                                <!-- Item -->
+                                <div class="flex items-end justify-between group">
+                                    <h3 class="text-lg md:text-xl font-bold text-gray-100 group-hover:text-brand-orange transition-colors">Água</h3>
+                                    <div class="item-dots"></div>
+                                    <span class="text-lg md:text-xl font-black text-brand-orange whitespace-nowrap">R$ 3,00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / CTA -->
+    <footer id="contato" class="bg-zinc-950 border-t border-zinc-900 pt-16 pb-8 relative overflow-hidden">
+        <!-- Decoration -->
+        <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 w-96 h-96 bg-brand-red rounded-full blur-[120px] opacity-20 pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            
+            <h2 class="font-display font-black text-3xl md:text-4xl text-white uppercase italic mb-8">Bateu a fome?</h2>
+            
+            <a href="https://wa.me/5511999999999" target="_blank" class="inline-flex flex-col items-center justify-center gap-2 bg-[#25D366] hover:bg-[#128C7E] text-white px-10 py-5 rounded-3xl font-bold transition-all shadow-[0_10px_30px_rgba(37,211,102,0.2)] hover:shadow-[0_10px_40px_rgba(37,211,102,0.4)] hover:-translate-y-1 group">
+                <span class="flex items-center gap-3 text-2xl uppercase tracking-wide">
+                    <i class="ph-fill ph-whatsapp text-4xl"></i>
+                    Faça seu Pedido
+                </span>
+                <span class="text-sm font-medium text-green-100 group-hover:text-white">Clique para pedir pelo WhatsApp</span>
+            </a>
+
+            <div class="mt-16 pt-8 border-t border-zinc-800/50 flex flex-col md:flex-row justify-between items-center gap-4">
+                <div class="flex items-center gap-2">
+                    <i class="ph-fill ph-fire text-xl text-brand-orange"></i>
+                    <span class="font-display font-black text-xl tracking-tighter text-white italic uppercase">
+                        Zaca's <span class="text-brand-red">GREGO</span>
+                    </span>
+                </div>
+                
+                <div class="text-gray-500 text-sm font-medium flex flex-col md:flex-row gap-2 md:gap-6 items-center">
+                    <span class="flex items-center gap-2"><i class="ph-fill ph-map-pin"></i> Rua Fictícia, 123 - Centro</span>
+                    <span class="flex items-center gap-2"><i class="ph-fill ph-instagram-logo"></i> @zacasgrego</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
